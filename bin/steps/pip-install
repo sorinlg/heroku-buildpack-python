@@ -6,8 +6,8 @@ puts-step "Installing dependencies with pip"
 
 set +e
 
-puts-step "extra cleanup"
-/app/.heroku/python/bin/pip uninstall -y leeroy || echo 'hmm'
+#puts-step "extra cleanup"
+#/app/.heroku/python/bin/pip uninstall -y leeroy || echo 'hmm'
 
 /app/.heroku/python/bin/pip install -r requirements.txt --exists-action=w --src=./.heroku/src --allow-all-external --disable-pip-version-check --no-cache-dir | cleanup | log-output | indent
 PIP_STATUS="${PIPESTATUS[0]}"
